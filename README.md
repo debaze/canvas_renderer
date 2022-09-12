@@ -1,2 +1,2 @@
-# wireframerenderer
-3D wireframe renderer made with vanilla JavaScripts.
+3D wireframe rendering engine made with vanilla JavaScript.  
+https://matteokeole.github.io/wireframerenderer
