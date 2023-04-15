@@ -6,10 +6,10 @@ export const
 	VELOCITY = 5 / FRAMES_PER_SECOND,
 	SENSITIVITY = 1.2,
 	Keybind = {
-		forward:	"KeyW",
-		backward:	"KeyS",
-		left:		"KeyA",
-		right:		"KeyD",
-		ascend:		"Space",
-		descend:	"ControlLeft",
+		forward: "KeyW",
+		backward: "KeyS",
+		left: "KeyA",
+		right: "KeyD",
+		ascend: "Space",
+		descend: "ControlLeft",
 	};

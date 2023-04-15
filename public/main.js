@@ -1,4 +1,4 @@
-import {VELOCITY, SENSITIVITY} from "./config.js";
+import {SENSITIVITY} from "./config.js";
 import {Renderer} from "./class/Renderer.js";
 import {Scene} from "./class/Scene.js";
 import {Camera} from "./class/Camera.js";
@@ -22,9 +22,9 @@ import loop from "./loop.js";
  * @see {@link https://stackoverflow.com/questions/4097688/draw-distorted-image-on-html5s-canvas}
  */
 export const
-	lookAround = e => {
-		let x = -e.movementY * SENSITIVITY / 1000, // Rotation along the X axis
-			y = e.movementX * SENSITIVITY / 1000; // Rotation along the Y axis
+	lookAround = function({movementX, movementY}) {
+		let x = -movementY * SENSITIVITY / 1000, // Rotation along the X axis
+			y = movementX * SENSITIVITY / 1000; // Rotation along the Y axis
 
 		// Prevent < -180° or > 180° rotation along the X axis
 		if (
@@ -32,16 +32,13 @@ export const
 			x > 0 && camera.rotation.x > Math.PI / 2 // To the bottom
 		) x = 0;
 
-		// Prevent unlimited rotation along the Y axis
-		if (Math.abs(camera.rotationy) > Math.PI * 2) camera.rotation.y = 0;
-
 		camera.rotation.x += x;
 		camera.rotation.y += y;
-		camera.rotation.z = e.movementX * Math.PI / 500;
+		camera.rotation.z = movementX * Math.PI / 1000;
 	},
 	keys		= new Set(),
-	pressKeys	= e => keys.add(e.code),
-	releaseKeys	= e => keys.delete(e.code),
+	pressKeys	= ({code}) => keys.add(code),
+	releaseKeys	= ({code}) => keys.delete(code),
 	renderer	= new Renderer(),
 	scene		= new Scene(),
 	camera		= new Camera(600);

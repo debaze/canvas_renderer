@@ -1,1 +1,0 @@
-3D wireframe renderer made with the Canvas API.

@@ -1,0 +1,25 @@
+#debug {
+	margin: 10px;
+	padding: 5px 10px;
+	bottom: 0;
+	position: absolute;
+	border-radius: 5px;
+	background-color: #0007;
+	color: #ddd;
+	font-family: Consolas, monospace;
+}
+
+#debug span {
+	display: block;
+}
+#debug span::before {
+	color: #aaa;
+	font-style: italic;
+}
+
+#debug .position::before {
+	content: "Position: ";
+}
+#debug .rotation::before {
+	content: "Rotation: ";
+}

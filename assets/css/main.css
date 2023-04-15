@@ -1,6 +1,6 @@
-@import url("debugger.css");
+@import url("debug.css");
 
 body {
-	margin: 0;
+	margin: initial;
 	overflow: hidden;
 }
