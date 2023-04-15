@@ -1,6 +1,12 @@
 import {renderer, lookAround, keys, pressKeys, releaseKeys} from "./main.js";
 
-const pointerLockUpdate = () => {
+addEventListener("resize", () => renderer.stretch());
+
+addEventListener("click", function({target}) {
+	if (target === renderer.canvas) renderer.lock();
+});
+
+document.addEventListener("pointerlockchange", function() {
 	if (renderer.isLocked()) {
 		addEventListener("keydown", pressKeys);
 		addEventListener("keyup", releaseKeys);
@@ -11,14 +17,4 @@ const pointerLockUpdate = () => {
 		removeEventListener("mousemove", lookAround);
 		keys.clear();
 	}
-};
-
-addEventListener("resize", () => {
-	renderer.stretch();
 });
-
-addEventListener("click", e => {
-	if (e.target === renderer.canvas) renderer.lock();
-});
-
-document.addEventListener("pointerlockchange", pointerLockUpdate);

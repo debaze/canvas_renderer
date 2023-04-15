@@ -6,7 +6,7 @@
  * @param	{number}	y
  * @returns	{Vector2}
  */
-export const Vector2 = function(x, y) {
+export function Vector2(x, y) {
 	return this.set(x, y);
 };
 

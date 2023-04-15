@@ -3,7 +3,9 @@ import {PlaneGeometry} from "./class/PlaneGeometry.js";
 import {Mesh} from "./class/Mesh.js";
 import {scene} from "./main.js";
 
-export default () => {
+export let base, mesh, rotatedCube, mesh2, mesh3, mesh4;
+
+export default function() {
 	base = new Mesh(new PlaneGeometry(10, 6));
 	base.position.set(0, -1, 5);
 
@@ -29,5 +31,4 @@ export default () => {
 
 	scene.background = "#151515";
 	scene.add(base, mesh, rotatedCube, mesh2, mesh3, mesh4);
-};
-export let base, mesh, rotatedCube, mesh2, mesh3, mesh4;
+}

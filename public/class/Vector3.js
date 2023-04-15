@@ -7,7 +7,7 @@
  * @param   {number}    z
  * @returns {Vector3}
  */
-export const Vector3 = function(x, y, z) {
+export function Vector3(x, y, z) {
 	return this.set(x, y, z);
 };
 

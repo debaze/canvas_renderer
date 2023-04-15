@@ -1,7 +1,7 @@
 import {Vector3} from "./class/Vector3.js";
 
 export const
-	transform = (v, mesh, camera) => {
+	transform = function(v, mesh, camera) {
 		v = rotateX(v, mesh.rotation.x); // Rotate along the X axis
 		v = rotateY(v, -mesh.rotation.y); // Rotate along the Y axis
 		v = rotateZ(v, -mesh.rotation.z); // Rotate along the Z axis
@@ -22,7 +22,7 @@ export const
 
 		return v;
 	},
-	rotateX = (v, a) => {
+	rotateX = function(v, a) {
 		let c = Math.cos(a),
 			s = Math.sin(a);
 
@@ -32,7 +32,7 @@ export const
 			v.y * s + v.z * c,
 		);
 	},
-	rotateY = (v, a) => {
+	rotateY = function(v, a) {
 		let c = Math.cos(a),
 			s = Math.sin(a);
 
@@ -42,7 +42,7 @@ export const
 			v.x * s + v.z * c,
 		);
 	},
-	rotateZ = (v, a) => {
+	rotateZ = function(v, a) {
 		let c = Math.cos(a),
 			s = Math.sin(a);
 
