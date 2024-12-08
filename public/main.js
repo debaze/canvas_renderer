@@ -14,7 +14,7 @@ import loop from "./loop.js";
  * [Space]		Fly up
  * [LeftCtrl]	Fly down
  * 
- * @see {@link https://github.com/matteokeole/jsrenderer}
+ * @see {@link https://github.com/debaze/jsrenderer}
  * @see {@link https://developer.mozilla.org/en-US/docs/Games/Techniques/3D_on_the_web/Basic_theory}
  * @see {@link https://www.youtube.com/watch?v=OVQxTNd2U3w&t=1220s}
  * @see {@link https://www.sitepoint.com/building-3d-engine-javascript}
